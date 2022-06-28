@@ -1,0 +1,31 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Tahoma', sans-serif;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .form-control{
+    width: 400px;
+    margin-bottom: 1rem;
+
+  }
+
+  .title {
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+    padding-bottom: 2rem;
+  }
+
+  .submit {
+    font-style: oblique;
+    font-size: xx-large;
+    font-family:'Courier New', Courier, monospace;
+  }
+}
+

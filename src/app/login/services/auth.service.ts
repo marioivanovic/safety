@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Person } from '../../models/person';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-// import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -41,14 +41,14 @@ export class AuthService {
     )
   }
 
-  // getIdByToken(){
-  //   const token = localStorage.getItem("TOKEN_APPLI")
-  //   const helper = new JwtHelperService();
-  //   const decodedToken = helper.decodeToken(token);
-  //   console.log(decodedToken)
-  //   const id = decodedToken.userId;
-  //   return id;
-  // }
+  getIdByToken(){
+    const token = localStorage.getItem("TOKEN_APPLI")
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token!);
+    console.log(decodedToken)
+    const id = decodedToken.userId;
+    return id;
+  }
 
 
   logout() {

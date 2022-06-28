@@ -13,9 +13,10 @@ export class PageSignInComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
-    console.log('Composant PageSignIn instancié');
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -34,7 +35,7 @@ export class PageSignInComponent implements OnInit {
     .subscribe((response: any) => {
         console.log('User successfully logged in!', response);
         console.log(response);
-        this.router.navigate(['/account']);
+        this.router.navigate(['/orders']);
       });
   }
 

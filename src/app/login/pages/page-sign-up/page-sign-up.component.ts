@@ -12,9 +12,10 @@ export class PageSignUpComponent implements OnInit {
 
   registerForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
-    console.log('Composant PageSignUp instancié');
-   }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -22,8 +23,8 @@ export class PageSignUpComponent implements OnInit {
 
   initForm() {
     this.registerForm = this.formBuilder.group({
-      firstName: this.formBuilder.control("", Validators.required),
-      lastName: this.formBuilder.control("", Validators.required),
+      firstName: this.formBuilder.control(""),
+      lastName: this.formBuilder.control(""),
       email: this.formBuilder.control("", Validators.required),
       password: this.formBuilder.control("", [
         Validators.required,
@@ -39,7 +40,7 @@ export class PageSignUpComponent implements OnInit {
     .subscribe((response) => {
         console.log('Account successfully created!');
         console.log(response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/sign-in']);
     });
   }
 
