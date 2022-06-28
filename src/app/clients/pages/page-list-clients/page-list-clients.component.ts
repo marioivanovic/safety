@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { StateClient } from 'src/app/core/enums/state-client';
-import { Client } from 'src/app/core/models/client';
+import { StateClient } from 'src/app/core/enums/state-people';
+import { Client } from 'src/app/core/models/people';
 import { ClientsService } from '../../services/clients.service';
 
 @Component({
@@ -14,13 +14,13 @@ export class PageListClientsComponent implements OnInit {
   public subCollection$: Subject<Client[]>;
   public stateClient = StateClient;
 
-  constructor(private clientsService: ClientsService) { 
+  constructor(private clientsService: ClientsService) {
     this.headers = ['', '', 'Name', 'TotalCaHt', 'Tva', 'TotalTTC', 'State'];
     this.subCollection$ = this.clientsService.subCollection$;
     this.clientsService.refreshCollection();
     console.log('Composant list client instancié !');
   }
-  
+
   ngOnInit(): void {
   }
 
@@ -35,7 +35,7 @@ export class PageListClientsComponent implements OnInit {
         client.state = updatedClient.state;
       });
   }
-  
+
   ngOnDestroy(): void {
     console.log('Composant list client detruit ...');
   }

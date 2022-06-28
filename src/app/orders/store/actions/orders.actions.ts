@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Order } from "src/app/core/models/order";
+import { Order } from "src/app/core/models/alerts";
 
 export const getAllOrdersAction = createAction(
     '[Orders] get all orders'

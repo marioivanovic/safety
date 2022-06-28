@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Order } from "src/app/core/models/order";
+import { Order } from "src/app/core/models/alerts";
 import { addOrderActionSuccess, deleteOrderByIdActionSuccess, editOrderActionSuccess, getAllOrdersActionSuccess } from "../actions/orders.actions";
 
 export interface OrdersState {
@@ -56,7 +56,7 @@ export const orderReducer = createReducer(
             return {
                 ...state,
                 orders: [...newStateOrder]
-            } 
+            }
         }
     )
 )

@@ -1,5 +1,5 @@
-import { StateClient } from "../enums/state-client";
-import { ClientI } from "../interfaces/client-i";
+import { StateClient } from "../enums/state-people";
+import { ClientI } from "../interfaces/people-i";
 
 export class Client implements ClientI {
     name!: string;

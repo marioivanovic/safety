@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, Subject, tap } from 'rxjs';
-import { StateOrder } from 'src/app/core/enums/state-order';
-import { Order } from 'src/app/core/models/order';
+import { StateOrder } from 'src/app/core/enums/state-alerts';
+import { Order } from 'src/app/core/models/alerts';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class OrdersService {
   private urlApi = environment.urlApi;
 
   constructor(private http: HttpClient) {
-    this.collection$ = this.http.get<Order[]>(`${this.urlApi}/orders`).pipe(
+    this.collection$ = this.http.get<Order[]>(`${this.urlApi}/alerts`).pipe(
       map(tabObj => {
         return tabObj.map(obj => {
           return new Order(obj)
@@ -38,7 +38,7 @@ export class OrdersService {
   }
 
   public update(order: Order): Observable<Order> {
-    return this.http.put<Order>(`${this.urlApi}/orders/${order.id}`, order)
+    return this.http.put<Order>(`${this.urlApi}/alert/${order.id}`, order)
   }
 
   public changeState(order: Order, state: StateOrder): Observable<Order> {
@@ -47,7 +47,7 @@ export class OrdersService {
   }
 
   public add(order: Order): Observable<Order> {
-    return this.http.post<Order>(`${this.urlApi}/orders`, order)
+    return this.http.post<Order>(`${this.urlApi}/alerts`, order)
   }
 
   public getById(orderId: number): Observable<Order> {
@@ -55,7 +55,7 @@ export class OrdersService {
   }
 
   public deleteById(orderId: number): Observable<any> {
-    return this.http.delete<any>(`${this.urlApi}/orders/${orderId}`)
+    return this.http.delete<any>(`${this.urlApi}/alerts/${orderId}`)
   }
 
 }

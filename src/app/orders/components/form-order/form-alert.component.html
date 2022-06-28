@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="Noms">Nom</label>
+    <input type="text" class="form-control" id="noms" formControlName="noms" />
+  </div>
+
+  <div class="form-group">
+    <label for="Descriptions">Description</label>
+    <input type="text" class="form-control" id="tva" formControlName="tva" />
+  </div>
+
+  <div class="form-group">
+    <label for="state">state</label>
+    <select class="form-control" id="state" formControlName="state">
+      <option *ngFor="let state of states | keyvalue" [value]="state.key">
+        {{ state.value }}
+      </option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    Submit
+  </button>
+</form>

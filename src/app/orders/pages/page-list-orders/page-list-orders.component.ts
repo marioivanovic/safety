@@ -15,8 +15,8 @@ import {
   Subscription,
   tap
 } from 'rxjs';
-import { StateOrder } from 'src/app/core/enums/state-order';
-import { Order } from 'src/app/core/models/order';
+import { StateOrder } from 'src/app/core/enums/state-alerts';
+import { Order } from 'src/app/core/models/alerts';
 import { VersionService } from 'src/app/core/services/version.service';
 import { OrdersService } from '../../services/orders.service';
 import {
@@ -47,7 +47,6 @@ export class PageListOrdersComponent implements OnInit {
   public collection!: Order[];
 
   private count = 0;
-  // private subNumVersion: Subscription;
 
   constructor(
     private ordersService: OrdersService,
@@ -55,29 +54,14 @@ export class PageListOrdersComponent implements OnInit {
     private store: Store
   ) {
     this.headers = [
-      '',
-      '',
+      $localize`Editer`,
+      $localize`Supprimer`,
       $localize`Noms`,
       $localize`Descriptions`,
-      $localize`TVA`,
-      $localize`Total HT`,
-      $localize`Total TTC`,
-      $localize`Type Presta`,
-      $localize`Client`,
       $localize`State`
     ];
     this.collection$ = this.store.select(selectAllOrders);
     this.store.dispatch(getAllOrdersAction());
-  }
-
-  public total(val: number, coef: number, tva?: number): number {
-    this.count++;
-    console.warn(this.count);
-    if (tva) {
-      return val * coef * (1 + tva / 100);
-    } else {
-      return val * coef;
-    }
   }
 
   ngOnInit(): void {}

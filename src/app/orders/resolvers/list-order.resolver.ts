@@ -5,7 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Order } from 'src/app/core/models/order';
+import { Order } from 'src/app/core/models/alerts';
 import { OrdersService } from '../services/orders.service';
 
 @Injectable({

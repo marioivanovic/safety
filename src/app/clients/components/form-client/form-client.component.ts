@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { StateClient } from 'src/app/core/enums/state-client';
-import { Client } from 'src/app/core/models/client';
+import { StateClient } from 'src/app/core/enums/state-people';
+import { Client } from 'src/app/core/models/people';
 
 @Component({
   selector: 'app-form-client',
@@ -13,7 +13,7 @@ export class FormClientComponent implements OnInit {
   @Output() submitted = new EventEmitter<Client>();
   public form!: FormGroup;
   public states = StateClient;
-  
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {

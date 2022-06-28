@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, Subject, tap } from 'rxjs';
 import { ErrorHandler } from 'src/app/core/abstracts/error-handler';
-import { StateClient } from 'src/app/core/enums/state-client';
-import { Client } from 'src/app/core/models/client';
+import { StateClient } from 'src/app/core/enums/state-people';
+import { Client } from 'src/app/core/models/people';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ClientsService extends ErrorHandler {
   public collection$: Observable<Client[]>;
   public subCollection$ = new Subject<Client[]>();
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     super();
     this.collection$ = this.http.get<Client[]>(`${this.urlApi}/clients`).pipe(
       map((listObj) => {

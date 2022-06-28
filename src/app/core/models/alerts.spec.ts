@@ -1,4 +1,4 @@
-import { Order } from './order';
+import { Order } from './alerts';
 
 describe('Order', () => {
   it('should create an instance', () => {

@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { catchError, map, of, switchMap } from "rxjs";
-import { StateOrder } from "src/app/core/enums/state-order";
-import { Order } from "src/app/core/models/order";
+import { StateOrder } from "src/app/core/enums/state-alerts";
+import { Order } from "src/app/core/models/alerts";
 import { OrdersService } from "../../services/orders.service";
 import { addOrderAction, addOrderActionFailure, addOrderActionSuccess, deleteOrderByIdAction, deleteOrderByIdActionFailure, deleteOrderByIdActionSuccess, editOrderAction, editOrderActionFailure, editOrderActionSuccess, getAllOrdersAction, getAllOrdersActionFailure, getAllOrdersActionSuccess } from "../actions/orders.actions";
 

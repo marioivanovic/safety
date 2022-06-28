@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Order } from 'src/app/core/models/order';
+import { Order } from 'src/app/core/models/alerts';
 import { OrdersService } from '../../services/orders.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-edit-order.component.scss']
 })
 export class PageEditOrderComponent implements OnInit {
-  // public orderToEdit$!: Observable<Order>; // Version avec pipe async 
+  // public orderToEdit$!: Observable<Order>; // Version avec pipe async
   public orderToEdit!: Order; // Version avec subscribe
 
   constructor(
@@ -18,7 +18,7 @@ export class PageEditOrderComponent implements OnInit {
     private ordersService: OrdersService,
     private router: Router
   ) {
-    // Version avec pipe async 
+    // Version avec pipe async
     // this.route.paramMap.subscribe((params: ParamMap) => {
     //   const orderId = Number(params.get('id'));
     //   console.log(orderId);

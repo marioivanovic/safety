@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Client } from 'src/app/core/models/client';
+import { Client } from 'src/app/core/models/people';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { ClientsService } from '../../services/clients.service';
 

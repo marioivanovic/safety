@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageAddOrderComponent } from './page-add-order.component';
+import { PageAddOrderComponent } from './page-add-alert.component';
 
 describe('PageAddOrderComponent', () => {
   let component: PageAddOrderComponent;
