@@ -1,0 +1,15 @@
+.state-option {
+    background: var(--app-warning);
+}
+
+.state-canceled {
+    background: var(--app-error);
+}
+
+.state-confirmed {
+    background: var(--app-success);
+}
+
+.state-done{
+  background: var(--app-done);
+}
