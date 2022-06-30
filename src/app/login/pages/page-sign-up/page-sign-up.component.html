@@ -2,24 +2,6 @@
       <form (ngSubmit) ="submitForm()" [formGroup]="registerForm">
         <div class="form">
             <div class="title">Registration</div>
-            <!-- firstName -->
-            <div class="form-floating input-container">
-              <input type="text"
-                     class="form-control input"
-                     id="firstName"
-                     placeholder="Name"
-                     formControlName= "firstName">
-              <label for="firstName">First Name</label>
-            </div>
-            <!-- lastName -->
-            <div class="form-floating input-container">
-            <input type="text"
-                    class="form-control input"
-                    id="lastName"
-                    placeholder="Name"
-                    formControlName= "lastName">
-            <label for="lastName">Last Name</label>
-          </div>
             <!-- Email -->
             <div class="form-floating input-container">
               <input type="email"
@@ -37,6 +19,78 @@
                      placeholder="Password"
                      formControlName="password">
               <label for="pwd">Password</label>
+            </div>
+              <!-- firstName -->
+              <div class="form-floating input-container">
+                <input type="text"
+                       class="form-control input"
+                       id="firstName"
+                       placeholder="Name"
+                       formControlName= "firstName">
+                <label for="firstName">First Name</label>
+              </div>
+              <!-- lastName -->
+              <div class="form-floating input-container">
+              <input type="text"
+                      class="form-control input"
+                      id="lastName"
+                      placeholder="Name"
+                      formControlName= "lastName">
+              <label for="lastName">Last Name</label>
+            </div>
+             <!-- Role -->
+             <div class="form-floating input-container">
+              <input type="text"
+                     class="form-control"
+                     id="role"
+                     placeholder="Role"
+                     formControlName="role">
+              <label for="role">Role</label>
+            </div>
+             <!-- City -->
+             <div class="form-floating input-container">
+              <input type="text"
+                     class="form-control"
+                     id="city"
+                     placeholder="City"
+                     formControlName="city">
+              <label for="city">City</label>
+            </div>
+             <!-- Age -->
+             <div class="form-floating input-container">
+              <input type="number"
+                     class="form-control"
+                     id="age"
+                     placeholder="Age"
+                     formControlName="age">
+              <label for="age">Age</label>
+            </div>
+             <!-- Phone -->
+             <div class="form-floating input-container">
+              <input type="text"
+                     class="form-control"
+                     id="phone"
+                     placeholder="Phone"
+                     formControlName="phone">
+              <label for="phone">Phone</label>
+            </div>
+             <!-- Zip -->
+             <div class="form-floating input-container">
+              <input type="number"
+                     class="form-control"
+                     id="zip"
+                     placeholder="Zip"
+                     formControlName="zip">
+              <label for="zip">Zip Code</label>
+            </div>
+             <!-- Address -->
+             <div class="form-floating input-container">
+              <input type="text"
+                     class="form-control"
+                     id="address"
+                     placeholder="Address"
+                     formControlName="address">
+              <label for="address">Address</label>
             </div>
             <!-- Login Redirect -->
             <div class="text-login">

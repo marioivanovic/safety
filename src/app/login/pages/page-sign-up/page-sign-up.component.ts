@@ -23,10 +23,16 @@ export class PageSignUpComponent implements OnInit {
 
   initForm() {
     this.registerForm = this.formBuilder.group({
+      email: this.formBuilder.control("", Validators.required),
+      password: this.formBuilder.control("", Validators.required),
       firstName: this.formBuilder.control(""),
       lastName: this.formBuilder.control(""),
-      email: this.formBuilder.control("", Validators.required),
-      password: this.formBuilder.control("", Validators.required)
+      role: this.formBuilder.control(""),
+      city: this.formBuilder.control(""),
+      age: this.formBuilder.control(""),
+      phone: this.formBuilder.control(""),
+      zip: this.formBuilder.control(""),
+      address: this.formBuilder.control(""),
     });
   }
 
