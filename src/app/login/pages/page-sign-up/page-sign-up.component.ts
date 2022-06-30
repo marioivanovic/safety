@@ -27,7 +27,7 @@ export class PageSignUpComponent implements OnInit {
       password: this.formBuilder.control("", Validators.required),
       firstName: this.formBuilder.control(""),
       lastName: this.formBuilder.control(""),
-      role: this.formBuilder.control(""),
+      role: this.formBuilder.control("", Validators.required),
       city: this.formBuilder.control(""),
       age: this.formBuilder.control(""),
       phone: this.formBuilder.control(""),
