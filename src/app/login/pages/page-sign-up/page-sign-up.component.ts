@@ -26,11 +26,7 @@ export class PageSignUpComponent implements OnInit {
       firstName: this.formBuilder.control(""),
       lastName: this.formBuilder.control(""),
       email: this.formBuilder.control("", Validators.required),
-      password: this.formBuilder.control("", [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.pattern('(?=\\D*\\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}')
-      ])
+      password: this.formBuilder.control("", Validators.required)
     });
   }
 
