@@ -29,12 +29,12 @@ export class AuthService {
       map(
         (resp: any) => {
           console.log(resp);
-          localStorage.setItem('TOKEN_APPLI', resp.token);
-          localStorage.setItem('USER_ID', resp.userId);
-          localStorage.setItem('USER_NAME', resp.userName);
+          localStorage.setItem('TOKEN_APPLI', resp.accessToken);
+          localStorage.setItem('USER_EMAIL', resp.email);
+          localStorage.setItem('USER_ROLE', resp.role);
           console.log('Token Save');
-          console.log(resp.userId);
-          console.log(resp.userName);
+          console.log(resp.email);
+          console.log(resp.role);
           return resp;
         }
       )
@@ -53,8 +53,8 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('TOKEN_APPLI');
-    localStorage.removeItem('USER_ID');
-    localStorage.removeItem('USER_NAME');
+    localStorage.removeItem('USER_EMAIL');
+    localStorage.removeItem('USER_ROLE');
     this.router.navigate(["/"]);
   }
 }

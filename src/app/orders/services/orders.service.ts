@@ -58,4 +58,9 @@ export class OrdersService {
     return this.http.delete<any>(`${this.urlApi}/orders/${orderId}`)
   }
 
+
+  public allPerson():Observable<any> {
+    return this.http.get<any>(this.urlApi + "/listperson");
+  }
+
 }

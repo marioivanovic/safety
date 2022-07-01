@@ -32,6 +32,8 @@ import { selectAllOrders } from '../../store/selectors/orders.selectors';
   styleUrls: ['./page-list-orders.component.scss']
 })
 export class PageListOrdersComponent implements OnInit {
+  persons!: [];
+
   public titleParent = 'Alertes';
   // public collection!: Order[];
   public collection$: Observable<Order[]>;
@@ -48,6 +50,7 @@ export class PageListOrdersComponent implements OnInit {
 
   private count = 0;
   // private subNumVersion: Subscription;
+
 
   constructor(
     private ordersService: OrdersService,
@@ -80,7 +83,16 @@ export class PageListOrdersComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+    // localStorage.getItem("USER_NAME");
+    this.ordersService.allPerson().subscribe(
+      (response: any) => {
+        this.persons = response;
+        console.log(this.persons);
+      }
+    )
+  }
 
   public onChangeState(order: Order, event: any): void {
     const orderToUpdate = new Order({ ...order, state: event.target.value });
@@ -96,6 +108,7 @@ export class PageListOrdersComponent implements OnInit {
   public onClickDelete(order: Order): void {
     this.store.dispatch(deleteOrderByIdAction({ id: order.id }));
   }
+
 
   ngOnDestroy(): void {
     console.log('Instance detruite + desinscription');
